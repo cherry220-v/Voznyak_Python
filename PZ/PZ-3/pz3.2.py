@@ -2,9 +2,9 @@
 # определяющую название цвета в зависимости от введенной длины волны.
 
 wavelength = input("Введите длину волны (в нм): ")
-while type(v1) != float:
+while type(wavelength) != float:
     try:
-        v1 = float(v1)
+        wavelength = float(wavelength)
     except:
         wavelength = input("Введите длину волны (в нм): ")
 # Определение цвета

@@ -2,16 +2,16 @@
 # неравенства A > 2 и B < 3».
 
 A = input("Введите целое число A: ")
-while type(v1) != int:
+while type(A) != int:
     try:
-        v1 = int(v1)
+        A = int(A)
     except:
         A = input("Введите целое число A: ")
 
 B = input("Введите целое число B: ")
-while type(v1) != int:
+while type(B) != int:
     try:
-        v1 = int(v1)
+        B = int(B)
     except:
         B = input("Введите целое число B: ")
 

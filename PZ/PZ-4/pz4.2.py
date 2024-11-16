@@ -2,9 +2,9 @@
 # деления, найти число, полученное при прочтении числа N справа налево.
 
 num = input("Введите число больше 0: ")
-while type(v1) != int:
+while type(num) != int:
     try:
-        v1 = int(v1)
+        num = int(num)
     except:
         num = input("Введите число больше 0: ")
 
@@ -26,9 +26,9 @@ print(reversedNum)
 
 # Я знаю про if :3
 num = input("Введите число больше 0: ")
-while type(v1) != int:
+while type(num) != int:
     try:
-        v1 = int(v1)
+        num = int(num)
     except:
         num = input("Введите число больше 0: ")
 
