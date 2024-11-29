@@ -1,3 +1,6 @@
+# Дан список размера N. Найти номер его последнего локального максимума
+# (локальный максимум — это элемент, который больше любого из своих соседей).
+
 import random
 def findLMax(lst):
     n = len(lst)
@@ -15,7 +18,12 @@ def findLMax(lst):
     if lst[-1] > lst[-2]: lastIndex = n - 1
     return lastIndex
 
-n = int(input("Введите длинну случайного списка: "))
+n = input("Введите длинну случайного списка: ")
+while type(n) != int:
+    try:
+        n = int(n)
+    except:
+        n = input("Введите длинну случайного списка: ")
 lst = [int(random.randint(1, 100)) for i in range(n)]
 lMax = findLMax(lst)
 print("Список {}\nНомер последнего локального максимума: {}. Это число {}".format(lst, lMax, lst[lMax]))
