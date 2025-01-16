@@ -5,7 +5,16 @@ def getUppercaseLetters(n):
 
 # 65 это код буквы A в ascii. Далее все буквы идут по порядку
 
-n = int(input("Введите число n (1 < n < 26): "))
+n = input("Введите число n (1 < n < 26): ")
+while type(n) != int:
+    try:
+        n = int(n)
+        if 1 < n < 26:
+            continue
+        else:
+            n = input("Введите число n (1 < n < 26): ")
+    except:
+        n = input("Введите число n (1 < n < 26): ")
 print(getUppercaseLetters(n))
 
 # Получение из модуля strings

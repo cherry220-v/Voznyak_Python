@@ -24,6 +24,7 @@ while type(n) != int:
         n = int(n)
     except:
         n = input("Введите длинну случайного списка: ")
+
 lst = [int(random.randint(1, 100)) for i in range(n)]
 lMax = findLMax(lst)
 print("Список {}\nНомер последнего локального максимума: {}. Это число {}".format(lst, lMax, lst[lMax]))
