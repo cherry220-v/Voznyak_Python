@@ -1,3 +1,5 @@
+# В последовательности на n целых чисел умножить элементы до n-1 на элемент n.
+
 def multiply_by_last(seq):
     if not seq:
         return []

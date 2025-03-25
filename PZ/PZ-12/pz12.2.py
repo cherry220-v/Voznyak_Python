@@ -1,3 +1,5 @@
+# Составить генератор (yield), который выводит из строки только буквы.
+
 def letter_generator(s):
     i = 0
     while i < len(s):

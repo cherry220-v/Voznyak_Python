@@ -1,21 +1,20 @@
-def ф(a=0):
-    [
-        3, 4, 5,
-        6, 7, 8
-    ]
+# В квадратной матрице все элементы, не лежащие на главной диагонали увеличить в 2 раза.
 
-    print("[\n1,2,3,\n4,5,6\n]", sep="  ")
+def modify_matrix(matrix):
+    size = len(matrix)
+    for i in range(size):
+        for j in range(size):
+            if i != j:
+                matrix[i][j] *= 2
+    return matrix
 
-    _ =  [
-        [1, 2, 3],
-        [2, 4, 6],
-    ]
-    yield from []; [_:= _ + 1]
+# Пример использования
+matrix = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
 
-try: ф()
-except WindowsError: print("pass")
-# raise OSError(ф())
-# raise WindowsError(ф())
-
-c = 0
-print(print(list(filter(ф, zip(map(ф, [c:= c + 1 for i in ["rgfnkergjelkgjerklg"]]))))))
+modified_matrix = modify_matrix(matrix)
+for row in modified_matrix:
+    print(row)
