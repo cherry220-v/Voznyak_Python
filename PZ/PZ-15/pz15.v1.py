@@ -21,21 +21,32 @@ CREATE TABLE IF NOT EXISTS Clients (
 )
 ''')
 
+data = [
+    ("Bwfe F F", 7, 3.4, 12, True, 1400),
+    ("wefe F", 7, 7.5, 122, True, 400),
+    ("gkjow F F", 7, 3, 1, False, 140),
+    ("pfwj F F", 7, 4, 24, True, 100),
+]
+cursor.executemany('''
+        INSERT INTO Clients 
+        (full_name, periodic_payment, annual_rate, deposit_term, has_card, final_amount)
+        VALUES (?, ?, ?, ?, ?, ?)
+    ''', data)
+conn.commit()
 def add_clients():
-    for i in range(10):
-        print(f"\n Добавление клиента {i + 1}/10:")
-        full_name = input("ФИО: ")
-        periodic_payment = float(input("Периодический платёж: "))
-        annual_rate = float(input("Годовая ставка (%): "))
-        deposit_term = int(input("Срок вклада (в месяцах): "))
-        has_card = int(input("Есть карта? (1 - да, 0 - нет): "))
-        final_amount = float(input("Итоговая сумма вклада: "))
+    print(f"\n Добавление клиента:")
+    full_name = input("ФИО: ")
+    periodic_payment = float(input("Периодический платёж: "))
+    annual_rate = float(input("Годовая ставка (%): "))
+    deposit_term = int(input("Срок вклада (в месяцах): "))
+    has_card = int(input("Есть карта? (1 - да, 0 - нет): "))
+    final_amount = float(input("Итоговая сумма вклада: "))
 
-        cursor.execute('''
-            INSERT INTO Clients 
-            (full_name, periodic_payment, annual_rate, deposit_term, has_card, final_amount)
-            VALUES (?, ?, ?, ?, ?, ?)
-        ''', (full_name, periodic_payment, annual_rate, deposit_term, has_card, final_amount))
+    cursor.execute('''
+        INSERT INTO Clients 
+        (full_name, periodic_payment, annual_rate, deposit_term, has_card, final_amount)
+        VALUES (?, ?, ?, ?, ?, ?)
+    ''', (full_name, periodic_payment, annual_rate, deposit_term, has_card, final_amount))
     conn.commit()
 
 def search_clients():
@@ -61,6 +72,8 @@ def search_clients():
 
     for row in cursor.fetchall():
         print(row)
+    else:
+        print("Никого нет")
 
 def delete_clients():
     print("\n Удаление клиентов:")
